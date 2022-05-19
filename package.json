@@ -1,0 +1,20 @@
+{
+  "name": "fix-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BanhTram/Fix-5.git"
+  },
+  "author": "Nguyen Thanh Nam - namnguyenthanh2k1@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BanhTram/Fix-5/issues"
+  },
+  "homepage": "https://github.com/BanhTram/Fix-5#readme"
+}
