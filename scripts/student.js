@@ -1,16 +1,20 @@
 app.studentCtrl = function ($scope, $location) {
     $scope.students = [
-        { name: 'Nam', age: new Date(2004, 01, 01), klass: 'Lop 10A1' },
-        { name: 'Bede', age: new Date(2006, 01, 01), klass: 'Lop 10A2' },
-        { name: 'Hoho', age: new Date(2003, 01, 01), klass: 'Lop 10A2' },
-        { name: 'Kaka', age: new Date(2002, 01, 01), klass: 'Lop 11A1' },
-        { name: 'Benben', age: new Date(2004, 01, 01), klass: 'Lop 11A2' },
-        { name: 'Lunu', age: new Date(2006, 01, 01), klass: 'Lop 12A1' },
-        { name: 'Lpaa', age: new Date(2001, 01, 01), klass: 'Lop 12A2' }
+        { idStudent: 0, name: 'Hien Ho', age: new Date(2004, 01, 01), idKlass: 3 },
+        { idStudent: 1, name: 'Son Tung', age: new Date(2006, 01, 01), idKlass: 6 },
+        { idStudent: 2, name: 'Nguyen Phuong Hang', age: new Date(2003, 01, 01), idKlass: 2 },
+        { idStudent: 3, name: 'Le Roi', age: new Date(2002, 01, 01), idKlass: 7 },
+        { idStudent: 4, name: 'Tung Son', age: new Date(2004, 01, 01), idKlass: 8 },
+        { idStudent: 5, name: 'Hoai Linh', age: new Date(2006, 01, 01), idKlass: 13 },
+        { idStudent: 6, name: 'Dong Nhi', age: new Date(2001, 01, 01), idKlass: 14 }
     ];
 
     $scope.calculateAge = function (birthdate) {
         return (new Date().getFullYear()) - (new Date(birthdate).getFullYear());
+    }
+
+    $scope.getKlass = function(index){
+        return $scope.klasses[index].name;
     }
 
     $scope.studentDefault = $scope.students.slice();

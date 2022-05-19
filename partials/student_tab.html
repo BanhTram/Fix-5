@@ -43,7 +43,7 @@
                 <td>{{$index + 1}}</td>
                 <td class="ColumnStudentName">{{student.name}}</td>
                 <td>{{calculateAge(student.age)}}</td>
-                <td>{{student.klass}}</td>
+                <td>{{getKlass(student.idKlass)}}</td>
                 <td class="Interactive">
 
                     <button ng-click="editStudent(student)">Sua</button>
