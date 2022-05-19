@@ -1,0 +1,35 @@
+section {
+  margin-left: 440px;
+}
+
+section table {
+  width: 600px;
+  border: 1px solid black;
+}
+
+section table thead {
+  font-weight: bold;
+  text-align: center;
+}
+
+section table thead tr {
+  border: 1px solid black;
+  font-weight: normal;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.NoneBorder {
+  border: none;
+}
+
+.ColumnStudentName {
+  width: 37%;
+}
+
+.Interactive {
+  text-align: center;
+}
+/*# sourceMappingURL=style_table.css.map */
