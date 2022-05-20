@@ -1,4 +1,4 @@
-app.studentExpandCtrl = function ($scope, $location) {
+app.studentExpandCtrl = function ($scope, $location, $routeParams) {
 
     $scope.addStudent = function () {
         $location.path('/addStudent');
@@ -16,13 +16,13 @@ app.studentExpandCtrl = function ($scope, $location) {
             $scope.studentDefault.push(tempStudent);
 
             $location.path('/student');
-
         }
     }
 
-    $scope.editStudent = function (student) {
+    $scope.editStudent = function (student, idKlass) {
         $scope.student = student;
-        $location.path('/editStudent');
+        $scope.student.idKlass = idKlass;
+        $location.path('/editStudent/{{student}}');
     }
 
     $scope.saveEditStudent = function (name, age, klass) {
@@ -45,7 +45,5 @@ app.studentExpandCtrl = function ($scope, $location) {
 
         $scope.students.splice(index_students, 1);
         $scope.studentDefault.splice(index_studentDefault, 1);
-        alert($scope.students[index_students].idKlass);
-
     }
 }

@@ -1,4 +1,4 @@
-app.classExpandDeleteCtrl = function ($scope, $location) {
+app.classExpandDeleteCtrl = function ($scope, $location, $routeParams) {
 
     $scope.maxLevel = function (object) {
         var max = 0;

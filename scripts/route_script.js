@@ -13,8 +13,9 @@ app.config(function ($routeProvider) {
             templateUrl: '/partials/add_student.html'
         })
 
-        .when('/editStudent', {
-            templateUrl: '/partials/edit_student.html'
+        .when('/editStudent/:student', {
+            templateUrl: '/partials/edit_student.html',
+            controller: 'myController'
         })
 
         .when('/class', {
@@ -25,8 +26,9 @@ app.config(function ($routeProvider) {
             templateUrl: '/partials/add_class.html'
         })
 
-        .when('/editClass', {
-            templateUrl: '/partials/edit_class.html'
+        .when('/editClass/:class/:belong', {
+            templateUrl: '/partials/edit_class.html',
+            controller: 'myController'
         })
 
 });

@@ -1,4 +1,4 @@
-app.classExpandCtrl = function ($scope, $location) {
+app.classExpandCtrl = function ($scope, $location, $routeParams) {
 
     $scope.saveEditClass = function (name, belong) {
         if ((name != null || name != undefined) &&
