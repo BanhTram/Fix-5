@@ -13,8 +13,11 @@ app.studentCtrl = function ($scope, $location) {
         return (new Date().getFullYear()) - (new Date(birthdate).getFullYear());
     }
 
-    $scope.getKlass = function(index){
-        return $scope.klasses[index].name;
+    $scope.getKlass = function(student){
+        for(var i = 0; i < $scope.klasses.length; i++){
+            if(student.idKlass == $scope.klasses[i].idKlass)
+                return $scope.klasses[i].name;
+        }
     }
 
     $scope.studentDefault = $scope.students.slice();

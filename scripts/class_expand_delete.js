@@ -12,11 +12,15 @@ app.classExpandDeleteCtrl = function ($scope, $location) {
         return max;
     }
 
-    $scope.findArrayIndexKlass = function (object, level, parentID) {
+    $scope.findArrayIndexKlass = function (object, level, parentID, orderBy) {
         $scope.arrayIndex = [];
 
         for (var i = 0; i < object.length; i++) {
-            if (level < object[i].level && object[i].level <= $scope.maxLevel($scope.klasses) && object[i].parentID == parentID) {
+            if (level < object[i].level &&
+                object[i].level <= $scope.maxLevel($scope.klasses) &&
+                object[i].parentID == parentID &&
+                object[i].orderBy > orderBy
+                ) {
                 $scope.arrayIndex.push(i);
             }
         }
@@ -47,11 +51,10 @@ app.classExpandDeleteCtrl = function ($scope, $location) {
 
         var tempLevel = $scope.klasses[index].level;
         var tempParentID = $scope.klasses[index].parentID;
-        var tempIDKlass = $scope.klasses[index].idKlass;
+        var tempOrderBy = $scope.klasses[index].orderBy;
 
         $scope.klasses.splice(index, 1);
-        $scope.arrayIndexKlass = $scope.findArrayIndexKlass($scope.klasses, tempLevel, tempParentID);
-
+        $scope.arrayIndexKlass = $scope.findArrayIndexKlass($scope.klasses, tempLevel, tempParentID, tempOrderBy);
         $scope.arrayIndexStudent = $scope.findArrayIndexStudent($scope.students, $scope.klasses, tempLevel, tempParentID);
 
         var arrayReverse = _.chain($scope.arrayIndexStudent).reverse().value();
@@ -63,13 +66,18 @@ app.classExpandDeleteCtrl = function ($scope, $location) {
         for (var i = 0; i < $scope.arrayIndexKlass.length; i++) {
             $scope.klasses.splice($scope.arrayIndexKlass[i], 1);
         }
-        
-        for (var i = 1; i < arrayReverse.length; i++) {
-            arrayReverse[i] = arrayReverse[i] - i;
-        }
-        
-        for (var i = 0; i < arrayReverse.length; i++) {
-            $scope.students.splice(arrayReverse[i], 1);
-        }
+
+
+        // for (var i = 1; i < arrayReverse.length; i++) {
+        //     arrayReverse[i] = arrayReverse[i] - i;
+        // }
+
+        // for (var i = 0; i < arrayReverse.length; i++) {
+        //     $scope.students.splice(arrayReverse[i], 1);
+        // }
+
+        // for (var i = 1; i < $scope.students.length; i++) {
+        //     $scope.students[i].idKlass = $scope.students[i].idKlass - $scope.arrayIndexKlass.length;
+        // }
     }
 }

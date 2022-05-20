@@ -45,5 +45,6 @@ app.studentExpandCtrl = function ($scope, $location) {
 
         $scope.students.splice(index_students, 1);
         $scope.studentDefault.splice(index_studentDefault, 1);
+
     }
 }
