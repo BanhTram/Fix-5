@@ -20,7 +20,7 @@ app.classExpandDeleteCtrl = function ($scope, $location) {
                 object[i].level <= $scope.maxLevel($scope.klasses) &&
                 object[i].parentID == parentID &&
                 object[i].orderBy > orderBy
-                ) {
+            ) {
                 $scope.arrayIndex.push(i);
             }
         }
@@ -67,17 +67,11 @@ app.classExpandDeleteCtrl = function ($scope, $location) {
             $scope.klasses.splice($scope.arrayIndexKlass[i], 1);
         }
 
-
-        // for (var i = 1; i < arrayReverse.length; i++) {
-        //     arrayReverse[i] = arrayReverse[i] - i;
-        // }
-
-        // for (var i = 0; i < arrayReverse.length; i++) {
-        //     $scope.students.splice(arrayReverse[i], 1);
-        // }
-
-        // for (var i = 1; i < $scope.students.length; i++) {
-        //     $scope.students[i].idKlass = $scope.students[i].idKlass - $scope.arrayIndexKlass.length;
-        // }
+        for (var i = 0; i < $scope.students.length; i++) {
+            if ($scope.getKlass($scope.students[i]) === undefined) {
+                $scope.students.splice(i, 1);
+                i--;
+            }
+        }
     }
 }
